@@ -1,10 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Webpack Showcase</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Best Tip Calculator Ever!</title>
 </head>
+
 <body>
-    <h1>Welcome to Class.</h1>
+    <div class="container">
+        <header class="page-header">
+            <h1>Tip Calculator</h1>
+        </header>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+            </div>
+            <input type="number"
+                   aria-label="Amount"
+                   id="billAmount" />
+        </div>
+
+        <div class="btn-group btn-group-toggle"
+             data-toggle="buttons">
+            <label id="twoPercent"
+                   class="btn btn-secondary">
+                <input type="radio"
+                       name="options"
+                       autocomplete="off">2%
+            </label>
+            <label id="tenPercent"
+                   class="btn btn-secondary">
+                <input type="radio"
+                       name="options"
+                       autocomplete="off">10%
+            </label>
+            <label id="fifteenPercent"
+                   class="btn btn-secondary">
+                <input type="radio"
+                       name="options"
+                       autocomplete="off">15%
+            </label>
+            <label id="twentyPercent"
+                   class="btn btn-secondary">
+                <input type="radio"
+                       name="options"
+                       autocomplete="off">20%
+            </label>
+            <label id="customPercent"
+                   class="btn btn-secondary">
+                <input type="radio"
+                       name="options"
+                       autocomplete="off">Custom
+            </label>
+        </div>
+
+        <h5 id="tipMessage"></h5>
+
+        <ul class="list-group">
+            <li id="liBillAmount"
+                class="list-group-item w-100">Bill Amount: </li>
+            <li id="liTipPercentage"
+                class="list-group-item">Tip Percentage: </li>
+            <li id="liAmountOfTip"
+                class="list-group-item">Amount of tip: *Select a tip percentage*</li>
+            <li id="liTotalPaid"
+                class="list-group-item">Total to be Paid: *Select a tip percentage*</li>
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 </body>
+
 </html>
