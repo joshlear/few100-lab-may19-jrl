@@ -10,13 +10,29 @@ let _percentSelected: boolean = false;
 let _percent: number = 0;
 
 billAmountInput.addEventListener('input', () => compute());
-document.getElementById('twoPercent').addEventListener('click', () => setTipPercent(2));
-document.getElementById('tenPercent').addEventListener('click', () => setTipPercent(10));
-document.getElementById('fifteenPercent').addEventListener('click', () => setTipPercent(15));
-document.getElementById('twentyPercent').addEventListener('click', () => setTipPercent(20));
-document.getElementById('customPercent').addEventListener('click', () => toggleCustom());
+document.getElementById('twoPercent').addEventListener('click', () => clickPercent(2));
+document.getElementById('tenPercent').addEventListener('click', () => clickPercent(10));
+document.getElementById('fifteenPercent').addEventListener('click', () => clickPercent(15));
+document.getElementById('twentyPercent').addEventListener('click', () => clickPercent(20));
+document.getElementById('customPercent').addEventListener('click', () => clickCustom());
+document.getElementById('txtCustomPercent').addEventListener('keyup', () => changeCustom());
 
 readLocalStorage();
+
+function clickPercent(percent: number) {
+    document.getElementById('txtCustomPercent').style.visibility = "hidden";
+    setTipPercent(percent);
+}
+
+function clickCustom() {
+    let customPct: HTMLInputElement = <HTMLInputElement>document.getElementById('txtCustomPercent');
+    customPct.style.visibility = "visible";
+}
+
+function changeCustom() {
+    let customPct: HTMLInputElement = <HTMLInputElement>document.getElementById('txtCustomPercent');
+    setTipPercent(parseInt(customPct.value));
+}
 
 function setTipPercent(percent: number) {
     _percentSelected = true;
@@ -37,9 +53,7 @@ function setTipMessage(percent: number) {
     }
 }
 
-function toggleCustom() {
 
-}
 
 function compute() {
     if (billAmountInput.value.length > 0) {
